@@ -52,7 +52,7 @@
     <main class="content">
 
       <!-- Summary -->
-      <section class="card open" id="about">
+      <section class="card" id="about">
         <h2>Professional Summary</h2>
         <div class="card-content">
         <div class="core-domains">
@@ -302,10 +302,11 @@
       <section class="card" id="portfolio">
         <h2>Portfolio</h2>
         <div class="card-content">
-        <div class="project open"> <!-- first project starts open -->
+        <div class="project">
           <h3 class="project-title">
-            <span class="title-text">VMX 5-Axis Machining Center Design and Validation</span>
-            <a class="visit-btn" href="https://www.hurco.com/en-us/products/5-axis/Pages/U-trunnion-style-machining-centers.aspx" target="_blank" rel="noopener noreferrer">Visit ↗</a>
+            <a href="https://www.hurco.com/en-us/products/5-axis/Pages/U-trunnion-style-machining-centers.aspx" target="_blank" rel="noopener noreferrer">
+              VMX 5-Axis Machining Center Design and Validation
+            </a>
           </h3>
 
           <div class="project-content">
@@ -354,8 +355,9 @@
 
         <div class="project">
           <h3 class="project-title">
-            <span class="title-text">DMG MORI DMU 65 FD Monoblock Machine Optimization (FEM Optimization for Structural Enhancement)</span>
-            <a class="visit-btn" href="https://us.dmgmori.com/products/machines/milling/5-axis-milling/monoblock/dmu-65-fd-monoblock-2nd" target="_blank" rel="noopener noreferrer">Visit ↗</a>
+            <a href="https://us.dmgmori.com/products/machines/milling/5-axis-milling/monoblock/dmu-65-fd-monoblock-2nd" target="_blank" rel="noopener noreferrer">
+              DMG MORI DMU 65 FD Monoblock Machine Optimization <br> (FEM Optimization for Structural Enhancement)
+            </a>
           </h3>
 
           <div class="project-content">
@@ -406,8 +408,9 @@
 
         <div class="project">
           <h3 class="project-title">
-            <span class="title-text">LASERTEC 65 DED Hybrid System Integration (DED + CNC)</span>
-            <a class="visit-btn" href="https://us.dmgmori.com/products/machines/additive-manufacturing/powder-nozzle/lasertec-65-ded-hybrid" target="_blank" rel="noopener noreferrer">Visit ↗</a>
+            <a href="https://us.dmgmori.com/products/machines/additive-manufacturing/powder-nozzle/lasertec-65-ded-hybrid" target="_blank" rel="noopener noreferrer">
+              LASERTEC 65 DED Hybrid System Integration (DED + CNC)
+            </a>
           </h3>
 
           <div class="project-content">
@@ -450,12 +453,6 @@
           <!-- 🎥 Embedded video -->
           <div class="media-video">
             <video controls>
-              <source src="videos/LASERTEC 65 DED hybrid.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="media-video">
-            <video controls>
               <source src="videos/LASERTEC DED hybrid Series.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -467,41 +464,6 @@
 
     </main>
   </div>
-
-  <script>
-  document.querySelectorAll('.card').forEach(section => {
-    const content = section.querySelector('.card-content');
-    if (section.classList.contains('open')) {
-      content.style.maxHeight = 'none'; // keep open at load
-    } else {
-      content.style.maxHeight = '0'; // start closed
-    }
-  });
-
-  document.querySelectorAll('.card h2').forEach(header => {
-    header.style.cursor = 'pointer';
-    header.addEventListener('click', () => {
-      const section = header.parentElement;
-      const content = section.querySelector('.card-content');
-
-      if (section.classList.contains('open')) {
-        // collapse this section
-        content.style.maxHeight = content.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          content.style.maxHeight = '0';
-        });
-        section.classList.remove('open');
-      } else {
-        // expand this section
-        content.style.maxHeight = content.scrollHeight + 'px';
-        section.classList.add('open');
-        content.addEventListener('transitionend', () => {
-          if (section.classList.contains('open')) content.style.maxHeight = 'none';
-        }, { once: true });
-      }
-    });
-  });
-  </script>
 
   <script>
     const sections = document.querySelectorAll('section');
@@ -597,85 +559,57 @@
   </script>
 
   <script>
-  document.querySelectorAll('.top-nav a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
+document.querySelectorAll('.top-nav a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
 
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
-      // Measure the navbar height dynamically
-      const nav = document.querySelector('.top-nav');
-      const navHeight = nav ? nav.offsetHeight : 0;
-
-      // Calculate the scroll position and subtract the navbar height + small buffer
-      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navHeight - 15; // <-- add 20px breathing space
-
-      // Smooth scroll to that adjusted position
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    // Remove 'active' class from all navbar links
+    document.querySelectorAll('.top-nav a').forEach(item => {
+      item.classList.remove('active');
     });
-  });
-  </script>
 
-<script>
-  // Dynamically adjust .page-wrap padding to match navbar height
-  function adjustLayoutOffset() {
+    // Add 'active' class to the clicked navbar link
+    this.classList.add('active');
+
+    // Get the target section ID and element
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    // Get the position of the target section relative to the document
     const nav = document.querySelector('.top-nav');
-    const pageWrap = document.querySelector('.page-wrap');
-    if (nav && pageWrap) {
-      const navHeight = nav.offsetHeight;
-      pageWrap.style.paddingTop = navHeight + 'px';
-    }
-  }
+    const navHeight = nav ? nav.offsetHeight : 0;  // Navbar height
+    const targetPosition = target.offsetTop;  // Get the absolute position of the section
 
-  // Run on load and on resize (so it's responsive)
-  window.addEventListener('load', adjustLayoutOffset);
-  window.addEventListener('resize', adjustLayoutOffset);
-</script>
+    // Scroll to the target section (top of section aligned with bottom of navbar)
+    window.scrollTo({
+      top: targetPosition - navHeight, // Adjust the scroll position
+      behavior: 'smooth'
+    });
 
-<script>
-document.querySelectorAll('.project').forEach(project => {
-  const content = project.querySelector('.project-content');
-  if (project.classList.contains('open')) {
-    content.style.maxHeight = 'none';
-    content.style.padding = '20px 24px';
-  } else {
-    content.style.maxHeight = '0';
-    content.style.padding = '0 24px';
-  }
-});
+    // After scroll completes, expand the section if collapsed
+    setTimeout(() => {
+      const section = target.closest('.card');
+      const content = section.querySelector('.card-content');
 
-document.querySelectorAll('.project-title').forEach(title => {
-  title.addEventListener('click', e => {
-    // Ignore clicks on the Visit button
-    if (e.target.classList.contains('visit-btn')) return;
+      // Temporarily disable transition for immediate expansion
+      content.style.transition = 'none';
 
-    const project = title.parentElement;
-    const content = project.querySelector('.project-content');
+      // Expand the section if collapsed
+      if (content.style.maxHeight === '0px' || !content.style.maxHeight) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        section.classList.add('open');
+      }
 
-    if (project.classList.contains('open')) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      requestAnimationFrame(() => {
-        content.style.maxHeight = '0';
-        content.style.padding = '0 24px';
-      });
-      project.classList.remove('open');
-    } else {
-      project.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.style.padding = '20px 24px';
-      content.addEventListener('transitionend', () => {
-        if (project.classList.contains('open')) content.style.maxHeight = 'none';
-      }, { once: true });
-    }
+      // Re-enable the transition after a slight delay
+      setTimeout(() => {
+        content.style.transition = 'max-height 0.5s ease, padding 0.3s ease';
+      }, 100); // Delay to ensure expansion happens immediately
+    }, 300); // Wait for the scroll to complete before expanding the section
   });
 });
-</script>
+
+  </script>
 
 <!-- Video Modal -->
 <div id="video-modal" class="video-modal">
