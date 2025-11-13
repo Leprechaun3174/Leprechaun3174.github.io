@@ -1477,3 +1477,24 @@ body::-webkit-scrollbar {
     margin-top: 90px;  /* adjust this until the spacing feels right */
   }
 }
+
+/* Mobile/Tablet: soften project card spacing + remove blue border */
+@media (max-width: 900px) {
+
+  .project {
+    border-left: none !important;     /* remove blue border */
+
+    /* Add a clean, soft margin */
+    margin: 0px !important;
+    margin-bottom: 10px !important;
+
+    /* Reduce padding so it doesn't look oversized */
+    padding: 10px !important;
+  }
+
+  .card { padding: 10px;  /* softer spacing between cards */}
+
+  .content {
+    padding: 10px !important;  /* reduce overall content padding */
+  }
+}
