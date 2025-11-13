@@ -1498,6 +1498,7 @@ body::-webkit-scrollbar {
     padding: 10px !important;  /* reduce overall content padding */
   }
 }
+<<<<<<< HEAD
 
 .job-logo img {
   border: 2px solid #d0d7e3;   /* light gray border */
@@ -1506,3 +1507,5 @@ body::-webkit-scrollbar {
   background: #fff;            /* clean background */
 }
 
+=======
+>>>>>>> 06d45713ffb69a0496ec6c4cf9cd4c364e0d5750
