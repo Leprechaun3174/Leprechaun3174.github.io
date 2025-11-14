@@ -22,7 +22,8 @@ body {
 .page-wrap {
   display: flex;
   min-height: 100vh;
-  padding-top: 70px; /* static offset equal to navbar height */
+  padding-top: 70px;
+  /* static offset equal to navbar height */
 }
 
 /* Sidebar */
@@ -35,7 +36,8 @@ body {
   flex-direction: column;
   gap: 18px;
   position: sticky;
-  top: 60px; /* matches navbar height (adjust if navbar taller/shorter) */
+  top: 60px;
+  /* matches navbar height (adjust if navbar taller/shorter) */
   align-self: flex-start;
   z-index: 2;
 }
@@ -53,6 +55,21 @@ body {
   font-size: 24px;
   color: #3498db;
   margin-bottom: 4px;
+}
+
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  padding: 24px 20px;
+  border-right: 1px solid #e2e6ee;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 60px;
+  /* matches navbar height (adjust if navbar taller/shorter) */
+  align-self: flex-start;
+  z-index: 2;
 }
 
 .name {
@@ -157,7 +174,8 @@ strong {
 
 /* Jobs */
 .job {
-  margin-top: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .job-header h3 {
@@ -205,7 +223,8 @@ strong {
 @media (max-width: 900px) {
   .page-wrap {
     flex-direction: column;
-    padding-inline: 12px; /* clean, consistent gutters */
+    padding-inline: 12px;
+    /* clean, consistent gutters */
   }
 
   .sidebar {
@@ -213,19 +232,23 @@ strong {
     position: static;
     border-right: none;
     border-bottom: 1px solid #e2e6ee;
-    flex-direction: column;     /* was row */
+    flex-direction: column;
+    /* was row */
     align-items: stretch;
     gap: 12px;
-    margin-left: 0;             /* kill desktop left margin */
+    margin-left: 0;
+    /* kill desktop left margin */
     padding: 16px;
   }
 
   .profile-photo {
-    margin: 0 auto 12px;        /* center photo on mobile */
+    margin: 0 auto 12px;
+    /* center photo on mobile */
   }
 
   .content {
-    padding: 0;                 /* page-wrap now provides gutters */
+    padding: 0;
+    /* page-wrap now provides gutters */
   }
 }
 
@@ -296,7 +319,8 @@ nav ul li a.active {
 }
 
 :root {
-  --nav-offset: 80px; /* match or slightly larger than your top-nav height */
+  --nav-offset: 80px;
+  /* match or slightly larger than your top-nav height */
 }
 
 
@@ -334,8 +358,10 @@ nav ul li a.active {
   color: #007acc;
   font-weight: 700;
   font-size: 1.05em;
-  display: inline-block;           /* ensures transform works */
-  cursor: pointer;                 /* shows it's interactive */
+  display: inline-block;
+  /* ensures transform works */
+  cursor: pointer;
+  /* shows it's interactive */
   transition: transform 0.2s ease, text-decoration 0.2s ease;
 }
 
@@ -356,20 +382,6 @@ nav ul li a.active {
   line-height: 1.6;
 }
 
-/* Larger company logos on the right */
-.job-logo img {
-  width: 120px;            /* increased size */
-  height: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.job-logo img:hover {
-  opacity: 1;
-  transform: scale(1.08);
-}
-
 /* Keep layout balanced */
 .job-header {
   display: flex;
@@ -385,29 +397,29 @@ nav ul li a.active {
   min-width: 250px;
 }
 
-@media (max-width: 768px) {
-  .job-logo img {
-    width: 90px;   /* smaller on tablets/phones */
-  }
-}
-
 /* ===== Portfolio media layout ===== */
 .media-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;               /* more space between images */
-  margin: 28px 0;          /* generous vertical spacing */
-  padding: 0 20px;         /* adds left/right breathing room */
+  gap: 24px;
+  /* more space between images */
+  margin: 28px 0;
+  /* generous vertical spacing */
+  padding: 0 20px;
+  /* adds left/right breathing room */
 }
 
 .media-gallery img {
-  width: 45%;              /* keep 2 images per row */
-  height: auto;            /* maintain aspect ratio */
+  width: 45%;
+  /* keep 2 images per row */
+  height: auto;
+  /* maintain aspect ratio */
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: contain;     /* ensures no distortion */
+  object-fit: contain;
+  /* ensures no distortion */
 }
 
 .media-gallery img:hover {
@@ -418,42 +430,15 @@ nav ul li a.active {
 /* Responsive — single column on smaller screens */
 @media (max-width: 900px) {
   .media-gallery img {
-    width: 90%;            /* full width on mobile */
-  }
-}
-
-/* ===== Refined video layout ===== */
-.media-video {
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-}
-
-.media-video video {
-  width: 90%;              /* wider, matches your images */
-  max-width: 600px;        /* prevents oversizing on large screens */
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-  object-fit: contain;
-  background: #000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.media-video video:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-}
-
-/* Responsive: full width on smaller screens */
-@media (max-width: 900px) {
-  .media-video video {
     width: 90%;
+    /* full width on mobile */
   }
 }
 
 /* ===== Lightbox styling ===== */
 .lightbox {
-  display: none; /* hidden by default */
+  display: none;
+  /* hidden by default */
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -469,7 +454,7 @@ nav ul li a.active {
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   animation: fadeIn 0.3s ease;
 }
 
@@ -517,8 +502,15 @@ nav ul li a.active {
 
 /* Smooth fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Portfolio project title links */
@@ -535,7 +527,8 @@ nav ul li a.active {
 
 /* Add margin or padding to the left of the sidebar */
 .sidebar {
-  margin-left: 30px;   /* adds empty space outside the sidebar */
+  margin-left: 30px;
+  /* adds empty space outside the sidebar */
   /* or use padding-left if you want space inside the sidebar background */
   /* padding-left: 30px; */
 }
@@ -549,7 +542,8 @@ nav ul li a.active {
 
 .container {
   display: grid;
-  grid-template-columns: 300px 1fr;  /* sidebar + main content */
+  grid-template-columns: 300px 1fr;
+  /* sidebar + main content */
   gap: 30px;
 }
 
@@ -557,7 +551,8 @@ nav ul li a.active {
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;                  /* tighter spacing between pills */
+  gap: 6px;
+  /* tighter spacing between pills */
   margin-top: 4px;
   margin-bottom: 12px;
 }
@@ -565,10 +560,13 @@ nav ul li a.active {
 .skill-tags span {
   background: #e6f3ff;
   color: #007acc;
-  font-size: 12.5px;         /* slightly smaller text */
+  font-size: 12.5px;
+  /* slightly smaller text */
   font-weight: 500;
-  border-radius: 16px;       /* smaller pill shape */
-  padding: 4px 10px;         /* reduced padding for compact look */
+  border-radius: 16px;
+  /* smaller pill shape */
+  padding: 4px 10px;
+  /* reduced padding for compact look */
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -593,8 +591,8 @@ nav ul li a.active {
 .project {
   background: #ffffff;
   border-radius: 12px;
-  padding: 28px 36px;
-  margin: 30px 0;
+  padding: 20px 20px;
+  margin: 20px 0;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -662,8 +660,10 @@ nav ul li a.active {
 }
 
 .project-description strong {
-  color: #005fa3;       /* subtle blue tint to match your theme */
-  font-weight: 600;     /* stronger emphasis */
+  color: #005fa3;
+  /* subtle blue tint to match your theme */
+  font-weight: 600;
+  /* stronger emphasis */
 }
 
 .project-role strong {
@@ -680,10 +680,10 @@ nav ul li a.active {
 .mosaic {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 180px;         /* fixed, equal tile height */
+  grid-auto-rows: 180px;
   gap: 25px;
-  margin: 40px auto;
-  padding: 0 40px;
+  margin: 20px auto;
+  padding: 20px 40px;
   position: relative;
 }
 
@@ -691,28 +691,18 @@ nav ul li a.active {
 .mosaic img {
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* maintain aspect ratio */
+  object-fit: cover;
+  /* maintain aspect ratio */
   border-radius: 14px;
   background-color: #f8faff;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transform: rotate(var(--angle, 0deg));
-  transition: all 0.35s ease;
   cursor: pointer;
-}
-
-/* Subtle scatter tilt */
-.mosaic img:nth-child(odd) {
-  --angle: -2deg;
-}
-.mosaic img:nth-child(even) {
-  --angle: 2deg;
 }
 
 /* Hover animation */
 .mosaic img:hover {
-  transform: scale(1.05) rotate(0deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive adjustments */
@@ -737,9 +727,11 @@ nav ul li a.active {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
   position: sticky;
-  top: 60px;  /* match navbar height */
+  top: 60px;
+  /* match navbar height */
   height: fit-content;
-  margin-top: 0; /* ensure no double offset */
+  margin-top: 0;
+  /* ensure no double offset */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -750,12 +742,15 @@ nav ul li a.active {
 
 /* Larger Profile Photo */
 .profile-photo {
-  width: 200px;                 /* increased from 100px */
+  width: 200px;
+  /* increased from 100px */
   height: 200px;
-  margin: 0 auto 22px;          /* slightly more space below */
+  margin: 0 auto 22px;
+  /* slightly more space below */
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #007acc;    /* thicker, polished border */
+  border: 4px solid #007acc;
+  /* thicker, polished border */
   box-shadow: 0 6px 18px rgba(0, 122, 204, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -763,7 +758,8 @@ nav ul li a.active {
 .profile-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;            /* keeps your face proportioned correctly */
+  object-fit: cover;
+  /* keeps your face proportioned correctly */
 }
 
 .profile-photo:hover {
@@ -835,7 +831,8 @@ nav ul li a.active {
   .sidebar {
     position: static;
     width: 100%;
-    margin: 12px 0;     /* no “auto” centering; full-width */
+    margin: 12px 0;
+    /* no “auto” centering; full-width */
     margin-left: 0;
     padding: 16px;
   }
@@ -847,14 +844,14 @@ html {
 }
 
 .top-nav {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   overflow: hidden;
   border-left: 5px solid #0078d7;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -932,15 +929,18 @@ video {
 
 /* --- FINAL MOBILE CLEANUP --- */
 @media (max-width: 480px) {
+
   /* Reserve space for the fixed navbar */
   body {
-    padding-top: 100px; /* approximate mobile nav height when links wrap */
+    padding-top: 100px;
+    /* approximate mobile nav height when links wrap */
   }
 
   .top-nav {
     height: auto;
     padding: 12px 16px;
-    flex-wrap: wrap;          /* allow links to break into two rows neatly */
+    flex-wrap: wrap;
+    /* allow links to break into two rows neatly */
   }
 
   .nav-container {
@@ -976,10 +976,12 @@ video {
 }
 
 /* --- FINAL MOBILE OVERFLOW + WIDTH FIX --- */
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;   /* prevents horizontal scroll */
+  overflow-x: hidden;
+  /* prevents horizontal scroll */
 }
 
 /* Prevent flex overflow from nested padding */
@@ -988,7 +990,8 @@ html, body {
 .content,
 .sidebar {
   box-sizing: border-box;
-  max-width: 100vw;     /* stop layout from exceeding viewport width */
+  max-width: 100vw;
+  /* stop layout from exceeding viewport width */
   overflow-x: hidden;
 }
 
@@ -1030,7 +1033,8 @@ html, body {
 }
 
 /* --- FINAL NAVBAR + OVERFLOW BALANCE FIX --- */
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -1042,7 +1046,8 @@ html, body {
   flex-direction: row;
   flex-wrap: nowrap;
   min-height: 100vh;
-  padding-top: 70px; /* space for fixed navbar */
+  padding-top: 70px;
+  /* space for fixed navbar */
 }
 
 /* Ensure mobile layout fills screen without overflow */
@@ -1070,7 +1075,8 @@ html, body {
 
   .page-wrap {
     flex-direction: column;
-    padding-top: 100px; /* ✅ extra space for wrapped navbar */
+    padding-top: 100px;
+    /* ✅ extra space for wrapped navbar */
     width: 100%;
     margin: 0;
     overflow-x: hidden;
@@ -1087,11 +1093,13 @@ html, body {
 }
 
 /* --- REMOVE WHITE LINE / OVERFLOW ARTIFACT --- */
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  background-color: #f5f7fa; /* match your page background */
+  background-color: #f5f7fa;
+  /* match your page background */
 }
 
 /* Prevent any scrollbars or offset edges */
@@ -1116,27 +1124,31 @@ body::-webkit-scrollbar {
   .nav-container {
     flex-direction: column;
     align-items: center;
-    gap: 6px; /* space between logo and links */
+    gap: 6px;
+    /* space between logo and links */
   }
 
   .nav-container ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 14px; /* space between individual links */
+    gap: 14px;
+    /* space between individual links */
     margin: 0;
     padding: 0;
   }
 
   .nav-logo {
-    margin-bottom: 4px; /* small separation below "Ron Smith" */
+    margin-bottom: 4px;
+    /* small separation below "Ron Smith" */
   }
 }
 
 /* --- MOBILE JOB SECTION VISUAL REFINEMENT --- */
 @media (max-width: 480px) {
   .job {
-    margin-bottom: 28px; /* space between jobs */
+    margin-bottom: 28px;
+    /* space between jobs */
     padding-bottom: 12px;
     border-bottom: 1px solid #e6e6e6;
   }
@@ -1145,7 +1157,8 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px; /* space between title and meta */
+    gap: 6px;
+    /* space between title and meta */
     margin-bottom: 8px;
   }
 
@@ -1162,19 +1175,6 @@ body::-webkit-scrollbar {
     line-height: 1.4;
   }
 
-  .job-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 6px 0 10px; /* better breathing room */
-  }
-
-  .job-logo img {
-    width: 100px;
-    height: auto;
-    opacity: 0.9;
-  }
-
   .highlight-list {
     margin-top: 6px;
     padding-left: 20px;
@@ -1184,42 +1184,6 @@ body::-webkit-scrollbar {
 
   .highlight-list li {
     margin-bottom: 6px;
-  }
-}
-
-/* --- MOBILE COMPANY LOGO CENTERED --- */
-@media (max-width: 480px) {
-  .job-logo {
-    display: flex;
-    justify-content: center;  /* horizontally center */
-    align-items: center;
-    margin: 6px 0;            /* minimal breathing space */
-  }
-
-  .job-logo img {
-    width: 80px;              /* balanced size for small screens */
-    height: auto;
-    opacity: 0.9;
-  }
-}
-
-/* --- FORCE CENTER COMPANY LOGO ON MOBILE --- */
-@media (max-width: 480px) {
-  .job-logo {
-    display: flex !important;
-    justify-content: center !important;  /* center horizontally */
-    align-items: center !important;
-    width: 100% !important;              /* take full width of job container */
-    margin: 8px 0 !important;
-    text-align: center !important;
-  }
-
-  .job-logo img {
-    width: 70px !important;              /* slightly smaller for balance */
-    height: auto !important;
-    opacity: 0.9;
-    display: block;
-    margin: 0 auto;                      /* center inside flex fallback */
   }
 }
 
@@ -1257,8 +1221,10 @@ body::-webkit-scrollbar {
 
 /* --- FORCE CENTER ALL PROJECT TITLES --- */
 .project .project-title {
-  width: 100% !important;        /* make sure the title block spans the container */
-  text-align: center !important; /* center titles inside all projects */
+  width: 100% !important;
+  /* make sure the title block spans the container */
+  text-align: center !important;
+  /* center titles inside all projects */
   display: block !important;
   margin: 0 auto 12px !important;
 }
@@ -1280,7 +1246,8 @@ body::-webkit-scrollbar {
 /* --- CLEANER ROLE + DESCRIPTION LAYOUT --- */
 .project-role {
   display: inline-block;
-  margin: 6px 0 14px;     /* subtle space before and after */
+  margin: 6px 0 14px;
+  /* subtle space before and after */
   padding: 4px 10px;
   background: #007acc;
   color: #fff;
@@ -1290,7 +1257,7 @@ body::-webkit-scrollbar {
 }
 
 /* Role text alignment */
-.project-role + p,
+.project-role+p,
 .project-description p {
   margin-top: 8px;
   line-height: 1.65;
@@ -1298,83 +1265,14 @@ body::-webkit-scrollbar {
   font-size: 14px;
 }
 
-/* ===== FINAL CLEAN VIDEO MODAL STYLING ===== */
-.video-modal {
-  display: none;                  /* hidden until activated */
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100dvh;                 /* dynamic viewport for mobile browsers */
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overflow: hidden;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.video-modal.show {
-  display: flex;                  /* display modal when .show class added via JS */
-}
-
-.video-modal .modal-content {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 80%;
-  max-width: 640px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-}
-
-.video-modal .modal-content video {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  background: #000;
-}
-
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 28px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  line-height: 34px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.close-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive for mobile */
-@media (max-width: 600px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
-  .video-modal .modal-content {
-    width: 92vw;
-    max-width: 92vw;
-    margin: 0 auto;
-    border-radius: 10px;
-  }
-}
-
 /* ===== FIX CONTENT VISIBILITY BETWEEN 480px AND 900px ===== */
 @media (min-width: 481px) and (max-width: 900px) {
   .page-wrap {
-    flex-direction: column;       /* stack sidebar + content */
+    flex-direction: column;
+    /* stack sidebar + content */
     width: 100%;
-    padding: 0 16px;              /* light side gutters */
+    padding: 0 16px;
+    /* light side gutters */
   }
 
   .sidebar {
@@ -1389,7 +1287,8 @@ body::-webkit-scrollbar {
     display: block;
     width: 100%;
     margin: 0;
-    padding: 20px 16px;           /* restore padding so content shows */
+    padding: 20px 16px;
+    /* restore padding so content shows */
     background: #fff;
   }
 }
@@ -1398,20 +1297,23 @@ body::-webkit-scrollbar {
 .project-role {
   display: block;
   text-align: center;
-  margin: 8px auto 14px;  /* balanced spacing around it */
+  margin: 8px auto 14px;
+  /* balanced spacing around it */
   padding: 6px 12px;
   background: #007acc;
   color: #fff;
   border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
-  width: fit-content;     /* shrink to text width, centered by auto margin */
+  width: fit-content;
+  /* shrink to text width, centered by auto margin */
 }
 
 /* ===== FINAL STICKY SIDEBAR FIX ===== */
 .sidebar {
   position: sticky;
-  top: 70px; /* same as your navbar offset */
+  top: 70px;
+  /* same as your navbar offset */
   align-self: flex-start;
   z-index: 2;
   height: fit-content;
@@ -1424,47 +1326,59 @@ body::-webkit-scrollbar {
 
 @media (max-width: 900px) {
   .sidebar {
-    position: static; /* disable sticky on mobile only */
+    position: static;
+    /* disable sticky on mobile only */
   }
 }
 
 /* ==== NAVBAR: tablet width fix (480–900px) ==== */
 @media (max-width: 900px) {
   .top-nav {
-    height: auto;                  /* allow bar to grow when stacked */
+    height: auto;
+    /* allow bar to grow when stacked */
   }
 
   .nav-container {
-    flex-direction: column;        /* stack logo above links */
+    flex-direction: column;
+    /* stack logo above links */
     align-items: center;
     gap: 8px;
-    padding: 10px 16px;            /* tighter padding on small widths */
+    padding: 10px 16px;
+    /* tighter padding on small widths */
   }
 
   /* center and allow wrapping for the links */
   .nav-container nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;                     /* nice spacing between links */
+    gap: 16px;
+    /* nice spacing between links */
   }
 
   .nav-container nav ul li a {
-    font-size: 15px;               /* slightly smaller so it fits better */
+    font-size: 15px;
+    /* slightly smaller so it fits better */
     line-height: 1.3;
   }
 
   .nav-logo {
-    margin-bottom: 2px;            /* small separation above links */
+    margin-bottom: 2px;
+    /* small separation above links */
   }
 }
 
 /* When the navbar grows taller in this range, give content a bit more top space */
 @media (min-width: 481px) and (max-width: 900px) {
-  .page-wrap { padding-top: 100px; }  /* was 70px; adjust for stacked nav height */
+  .page-wrap {
+    padding-top: 100px;
+  }
+
+  /* was 70px; adjust for stacked nav height */
 }
 
 /* ===== ADD TRUE SPACE BELOW NAVBAR FOR SMALL SCREENS ===== */
 @media (max-width: 480px) {
+
   /* keep navbar compact */
   .top-nav {
     height: auto;
@@ -1474,7 +1388,8 @@ body::-webkit-scrollbar {
   /* create real gap below the navbar */
   .sidebar,
   .content {
-    margin-top: 90px;  /* adjust this until the spacing feels right */
+    margin-top: 90px;
+    /* adjust this until the spacing feels right */
   }
 }
 
@@ -1482,7 +1397,8 @@ body::-webkit-scrollbar {
 @media (max-width: 900px) {
 
   .project {
-    border-left: none !important;     /* remove blue border */
+    border-left: none !important;
+    /* remove blue border */
 
     /* Add a clean, soft margin */
     margin: 0px !important;
@@ -1492,20 +1408,81 @@ body::-webkit-scrollbar {
     padding: 10px !important;
   }
 
-  .card { padding: 10px;  /* softer spacing between cards */}
+  .card {
+    padding: 10px;
+    /* softer spacing between cards */
+  }
 
   .content {
-    padding: 10px !important;  /* reduce overall content padding */
+    padding: 10px !important;
+    /* reduce overall content padding */
   }
 }
-<<<<<<< HEAD
 
-.job-logo img {
-  border: 2px solid #d0d7e3;   /* light gray border */
-  border-radius: 8px;          /* optional: soften corners */
-  padding: 6px;                /* space around logo */
-  background: #fff;            /* clean background */
+/* ===== Certificate Modal ===== */
+.cert-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
 }
 
-=======
->>>>>>> 06d45713ffb69a0496ec6c4cf9cd4c364e0d5750
+.cert-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cert-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+/* Certificate Nav Buttons */
+.cert-prev,
+.cert-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 38px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  transition: 0.25s ease;
+}
+
+.cert-prev:hover,
+.cert-next:hover {
+  color: #007acc;
+}
+
+.cert-prev {
+  left: 30px;
+}
+
+.cert-next {
+  right: 30px;
+}
+
+.project-title a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.project-title-link {
+  display: block;
+  padding: 18px 24px;
+  text-decoration: none;
+  color: #007acc;
+  transition: background 0.2s ease, color 0.2s ease;
+}
