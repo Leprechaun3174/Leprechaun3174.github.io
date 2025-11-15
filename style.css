@@ -666,16 +666,6 @@ nav ul li a.active {
   /* stronger emphasis */
 }
 
-.project-role strong {
-  background: #007acc;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 13px;
-  margin-right: 6px;
-}
-
 /* ===== Uniform Tile Mosaic Gallery ===== */
 .mosaic {
   display: grid;
@@ -1485,4 +1475,70 @@ body::-webkit-scrollbar {
   text-decoration: none;
   color: #007acc;
   transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  color: white;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+/* --- Modern circular arrows for Certificate Modal --- */
+.cert-prev,
+.cert-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  color: white;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cert-prev:hover,
+.cert-next:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.cert-prev {
+  left: 30px;
+}
+
+.cert-next {
+  right: 30px;
 }
